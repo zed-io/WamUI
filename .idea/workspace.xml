@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="efe282ca-3a63-46ca-ae0a-7db41d4c1cf4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-BlackItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-BoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Book.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-BookItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Light Italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/CircularStd-MediumItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/NotoSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/android-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/artist-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/artist-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/bridge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/chameleon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/city.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/email-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/favorite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/forest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/paper-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/players-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/players.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/restaurant-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/restaurant-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/song-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/song-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/strawberries.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/wrecked-ship.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/styles/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DrawerItems.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ExampleList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ActivityIndicatorExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AnimatedFABExample/AnimatedFABExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AnimatedFABExample/CustomFAB.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AnimatedFABExample/CustomFABControls.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AnimatedFABExample/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AppbarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/AvatarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/BadgeExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/BannerExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/BottomNavigationBarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/BottomNavigationExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ButtonExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/CardExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/CheckboxExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/CheckboxItemExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ChipExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/DataTableExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/DialogExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogTextComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogWithCustomColors.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogWithIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogWithLoadingIndicator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogWithLongText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/DialogWithRadioBtns.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/UndismissableDialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/Dialogs/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/DividerExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/FABExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/IconButtonExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ListAccordionExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ListAccordionGroupExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ListItemExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ListSectionExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/MaterialBottomTabNavigatorExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/MenuExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ProgressBarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/RadioButtonExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/RadioButtonGroupExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/RadioButtonItemExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SearchbarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonCustomColorCheck.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonDefault.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonDisabled.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonMultiselect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonMultiselectIcons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonMultiselectRealCase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonOnlyIcons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonOnlyIconsWithCheck.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonRealCase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonWithDensity.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/SegmentedButtonWithSelectedCheck.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtons/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SegmentedButtonsExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SnackbarExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SurfaceExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/SwitchExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TeamDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TeamsList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TextExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TextInputExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ThemeExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ThemingWithReactNavigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/ToggleButtonExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TooltipExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Examples/TouchableRippleExample.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RootNavigator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ScreenWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Wam/Home/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Wam/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Ot2gGealZdXCx3zoE8vgZhPAZv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/mvps/wam/WamUI/assets/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/mvps/wam/WamUI/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efe282ca-3a63-46ca-ae0a-7db41d4c1cf4" name="Changes" comment="" />
+      <created>1682365667445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682365667445</updated>
+      <workItem from="1682365669251" duration="11533000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
