@@ -3,7 +3,6 @@ import { Appearance, KeyboardAvoidingView, Platform, useColorScheme } from 'reac
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import PasswordInput from './src/components/Inputs/PasswordInput';
 import { BaseInput } from './src/components/Inputs/BaseInput';
-import { Eye, Icon } from './assets/Icons';
 import ClearInputIcon, { ClearInput } from './src/icons/ClearInput';
 import { Search } from './src/icons/Search';
 
