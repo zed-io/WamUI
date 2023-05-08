@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Keyboard} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import EyeIcon from '../../icons/Eye';
+import EyeClosedIcon from '../../icons/EyeClosed';
 
 const PasswordInput = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -23,12 +24,7 @@ const PasswordInput = () => {
           secureTextEntry={!passwordVisible}
         />
         <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
-          <Ionicons
-            name={passwordVisible ? 'eye' : 'eye-off'}
-            size={24}
-            color="#A0A0A0"
-            style={styles.icon}
-          />
+          {passwordVisible ? <EyeIcon size={24} color='#A0A0A0'/> : <EyeClosedIcon size={24} color='#A0A0A0'/>}
         </TouchableOpacity>
       </View>
     </SafeAreaView> 
@@ -63,5 +59,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
 });
+
 
 export default PasswordInput;

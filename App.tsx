@@ -1,35 +1,29 @@
 import React from 'react';
-import { Appearance, useColorScheme } from 'react-native';
+import { Appearance, KeyboardAvoidingView, Platform, useColorScheme } from 'react-native';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import EmailInput from './src/components/Inputs/EmailInput';
 import PasswordInput from './src/components/Inputs/PasswordInput';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
-
-
-
+import { BaseInput } from './src/components/Inputs/BaseInput';
+import { Eye, Icon } from './assets/Icons';
+import ClearInputIcon, { ClearInput } from './src/icons/ClearInput';
+import { Search } from './src/icons/Search';
 
 const App = () => {
+  const keyboardBehavior = Platform.OS === 'ios' ? 'padding' : 'height';
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <Text>
-          Name
-        </Text>
-       <EmailInput 
-       placeholder="Enter Name Here" />
-       <EmailInput 
-       placeholder="Enter Name Here">
-        <TouchableOpacity>
-          <Ionicons name="close-circle-outline" size={24} color="##A4A4A4" />
-        </TouchableOpacity>
-       </EmailInput>
-       <EmailInput 
-       placeholder="Enter Name Here" />
-       <PasswordInput />
-      </View>
-    </SafeAreaView> 
+      <KeyboardAvoidingView style={styles.container} behavior={keyboardBehavior}>
+        <BaseInput 
+        placeholder='Kevin'
+        type='phone'
+        iconPosition='left'
+        icon={<Search 
+         size={24}
+         color={'#A0A0A0'}/>}
+        />
+        <PasswordInput />
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
 
@@ -39,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignContent: 'center',
     justifyContent: 'center',
-    padding: 20
+    padding: 20,
   },
 });
 
