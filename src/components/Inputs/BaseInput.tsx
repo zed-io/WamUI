@@ -3,15 +3,8 @@ import {
   View,
   TextInput,
   StyleSheet,
-  Image,
   TextInputProps,
 } from 'react-native';
-
-import EyeIcon from '../../icons/Eye';
-import EyeClosedIcon from '../../icons/EyeClosed';
-import { Search as SearchIcon } from '../../icons/Search';
-import ClearInputIcon from '../../icons/ClearInput';
-
 
 type Props = {
   placeholder: string;
@@ -23,8 +16,6 @@ type Props = {
 
 const BaseInput = ({
   placeholder,
-  children,
-  type = 'email',
   iconPosition = 'left',
   icon,
   ...props
@@ -33,19 +24,19 @@ const BaseInput = ({
   const [inputValue, setInputValue] = useState('');
 
 
-  const keyboardType =
-    type === 'phone' ? 'phone-pad' : type === 'email' ? 'email-address' : 'default';
-  const iconSide = iconPosition === 'left' ? styles.iconLeft : styles.iconRight;
-
-  const iconMap = {
-    Eye: EyeIcon,
-    EyeClosed: EyeClosedIcon,
-    Search: SearchIcon,
-    ClearInput: ClearInputIcon,
-  };
+  const keyboardType = () => {
+    switch (props.type) {
+      case 'phone':
+        return 'phone-pad';
+      case 'email':
+        return 'email-address';
+      default:
+        return 'default';
+    }
+  }
 
   return (
-    <View style={[styles.inputContainer, inputFocused && styles.focusedInput]}>
+       <View style={[styles.inputContainer, inputFocused && styles.focusedInput]}>
       {iconPosition === 'left' && icon && (
        icon
       )}
@@ -60,15 +51,15 @@ const BaseInput = ({
         onChangeText={setInputValue}
         onFocus={() => setInputFocused(true)}
         onBlur={() => setInputFocused(false)}
-        keyboardType={keyboardType}
+        keyboardType={keyboardType()}
       />
       {iconPosition === 'right' && icon && (
        icon
       )}
-      {children}
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   inputContainer: {
