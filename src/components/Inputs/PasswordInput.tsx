@@ -1,42 +1,42 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Keyboard} from 'react-native';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { View, TextInput, StyleSheet, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Keyboard} from 'react-native';
 import EyeIcon from '../../icons/Eye';
 import EyeClosedIcon from '../../icons/EyeClosed';
 
-const PasswordInput = () => {
+type Props = {
+  placeholder: string;
+  value: string;
+  onChangeText: (text: string) => void;
+}
+
+const PasswordInput = ({placeholder, value, onChangeText} : Props) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
 
   return (
-    <SafeAreaView>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <Text style={{paddingBottom: 3, paddingTop: 3}}>Password</Text>
-      </TouchableWithoutFeedback>
       <View style={[styles.inputContainer, passwordFocused && styles.focusedInput]}>
         <TextInput
           style={styles.input}
-          placeholder="Enter your password"
+          placeholder={placeholder}
           placeholderTextColor="gray"
           selectionColor="#B34AFF"
           onFocus={() => setPasswordFocused(true)}
           onBlur={() => setPasswordFocused(false)}
           secureTextEntry={!passwordVisible}
+          value={value}
+          onChangeText={onChangeText}
         />
         <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
           {passwordVisible ? <EyeIcon size={24} color='#A0A0A0'/> : <EyeClosedIcon size={24} color='#A0A0A0'/>}
         </TouchableOpacity>
       </View>
-    </SafeAreaView> 
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignContent: 'center',
-    justifyContent: 'center',
+  label: {
+    paddingBottom: 3,
+    paddingTop: 3,
   },
   inputContainer: {
     flexDirection: 'row',
@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 10,
     backgroundColor: '#C7CED04D',
+    paddingLeft: 10,
+    paddingRight: 5, 
   },
   focusedInput: {
     borderColor: '#B34AFF',
@@ -52,11 +54,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 50,
-    paddingHorizontal: 10,
     color: 'black',
-  },
-  icon: {
-    marginHorizontal: 10,
   },
 });
 
