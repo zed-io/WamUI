@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Appearance, KeyboardAvoidingView, Platform, useColorScheme } from 'react-native';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import PasswordInput from './src/components/Inputs/PasswordInput';
@@ -8,6 +8,7 @@ import { Search } from './src/icons/Search';
 
 const App = () => {
   const keyboardBehavior = Platform.OS === 'ios' ? 'padding' : 'height';
+  const [password, setPassword] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -20,7 +21,10 @@ const App = () => {
          size={24}
          color={'#A0A0A0'}/>}
         />
-        <PasswordInput />
+        <PasswordInput  
+        placeholder="Enter your password"
+        value={password}
+        onChangeText={setPassword}      />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
