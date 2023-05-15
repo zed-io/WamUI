@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity, SafeAreaView, KeyboardAvoidingView, Keyboard} from 'react-native';
-import EyeIcon from '../../icons/Eye';
-import EyeClosedIcon from '../../icons/EyeClosed';
+import React, { useState } from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { BaseInput } from "./BaseInput";
+import { Eye } from "../../icons/Eye";
+import { EyeClosed } from "../../icons/EyeClosed";
 
 type Props = {
-  placeholder: string;
-  value: string;
-  onChangeText: (text: string) => void;
-}
+  placeholder?: string;
+  label?: string;
+  description?: string;
+};
 
-const PasswordInput = ({placeholder, value, onChangeText} : Props) => {
+const PasswordInput = ({ placeholder, label, description }: Props) => {
+  const [value, setValue] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [passwordFocused, setPasswordFocused] = useState(false);
+
+  const handleChange = (text: string): void => {
+    setValue(text);
+  };
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   return (
-      <View style={[styles.inputContainer, passwordFocused && styles.focusedInput]}>
-        <TextInput
-          style={styles.input}
-          placeholder={placeholder}
-          placeholderTextColor="gray"
-          selectionColor="#B34AFF"
-          onFocus={() => setPasswordFocused(true)}
-          onBlur={() => setPasswordFocused(false)}
-          secureTextEntry={!passwordVisible}
-          value={value}
-          onChangeText={onChangeText}
-        />
-        <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
-          {passwordVisible ? <EyeIcon size={24} color='#A0A0A0'/> : <EyeClosedIcon size={24} color='#A0A0A0'/>}
+    <BaseInput
+      keyboardType={"default"}
+      secureTextEntry={!passwordVisible}
+      placeholder={placeholder}
+      label={label}
+      value={value}
+      RightIcon={
+        <TouchableOpacity onPress={togglePasswordVisibility}>
+          {passwordVisible ? <Eye /> : <EyeClosed />}
         </TouchableOpacity>
-      </View>
+      }
+      onChangeText={(text: string) => {
+        handleChange(text);
+      }}
+    />
   );
 };
 
@@ -37,26 +45,17 @@ const styles = StyleSheet.create({
   label: {
     paddingBottom: 3,
     paddingTop: 3,
+    fontWeight: "bold",
   },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 10,
-    marginVertical: 10,
-    backgroundColor: '#C7CED04D',
-    paddingLeft: 10,
-    paddingRight: 5, 
-  },
-  focusedInput: {
-    borderColor: '#B34AFF',
-    borderWidth: 2,
+  description: {
+    paddingTop: 3,
+    color: "red",
   },
   input: {
     flex: 1,
     height: 50,
-    color: 'black',
+    color: "black",
   },
 });
-
 
 export default PasswordInput;

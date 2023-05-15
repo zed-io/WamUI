@@ -1,76 +1,92 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   TextInput,
   StyleSheet,
   TextInputProps,
-} from 'react-native';
+  Text,
+  TouchableOpacity,
+} from "react-native";
+import { ClearInput } from "../../icons/ClearInput";
 
 type Props = {
+  label: string;
   placeholder: string;
-  children?: React.ReactNode;
-  type?: 'email' | 'phone';
-  iconPosition?: 'left' | 'right';
-  icon?: React.ReactNode
+  value?: string;
+  RightIcon?: React.ReactElement;
+  LeftIcon?: React.ReactElement;
+  onPress?: () => void;
 } & TextInputProps;
 
+const ClearInputButton = ({ onPress }: { onPress: () => void }) => (
+  <TouchableOpacity onPress={onPress}>
+    <ClearInput />
+  </TouchableOpacity>
+);
+
 const BaseInput = ({
+  label,
   placeholder,
-  iconPosition = 'left',
-  icon,
+  RightIcon,
+  LeftIcon,
   ...props
 }: Props) => {
-  const [inputFocused, setInputFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+  const [value, setValue] = useState("");
+  const [isFocused, setFocused] = useState<boolean>(false);
+  const handleFocus = (focused: boolean) => {
+    // @note what is the custom logic?
+    setFocused(focused);
+  };
+  const handleChange = (text: string): void => {
+    setValue(text);
+  };
 
-
-  const keyboardType = () => {
-    switch (props.type) {
-      case 'phone':
-        return 'phone-pad';
-      case 'email':
-        return 'email-address';
-      default:
-        return 'default';
-    }
-  }
+  const clearInput = () => {
+    setValue("");
+  };
 
   return (
-       <View style={[styles.inputContainer, inputFocused && styles.focusedInput]}>
-      {iconPosition === 'left' && icon && (
-       icon
-      )}
-      
-      <TextInput
-        {...props}
-        style={styles.input}
-        placeholder={placeholder}
-        placeholderTextColor="gray"
-        selectionColor="#B34AFF"
-        value={inputValue}
-        onChangeText={setInputValue}
-        onFocus={() => setInputFocused(true)}
-        onBlur={() => setInputFocused(false)}
-        keyboardType={keyboardType()}
-      />
-      {iconPosition === 'right' && icon && (
-       icon
-      )}
+    <View>
+      {label && <Text style={styles.label}>{label}</Text>}
+      <View style={[styles.inputContainer, isFocused && styles.focusedInput]}>
+        {LeftIcon && LeftIcon}
+        <TextInput
+          {...props}
+          style={styles.input}
+          placeholder={placeholder}
+          placeholderTextColor="gray"
+          selectionColor="#B34AFF"
+          value={value}
+          onFocus={() => handleFocus(true)}
+          onBlur={() => handleFocus(false)}
+          onChangeText={(text: string) => {
+            handleChange(text);
+          }}
+        />
+        {value !== "" &&
+          (RightIcon ? RightIcon : <ClearInputButton onPress={clearInput} />)}
+      </View>
     </View>
   );
 };
 
-
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 10,
     marginVertical: 10,
-    backgroundColor: '#C7CED04D',
+    paddingHorizontal: 10,
+    backgroundColor: "#C7CED04D",
+  },
+  label: {
+    paddingBottom: 3,
+    paddingTop: 3,
+    fontWeight: "bold",
   },
   focusedInput: {
-    borderColor: '#B34AFF',
+    borderColor: "#B34AFF",
     borderWidth: 2,
   },
   input: {
@@ -79,8 +95,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   icon: {
-    width: 20,
-    height: 20,
     marginHorizontal: 10,
   },
   iconLeft: {
@@ -92,4 +106,3 @@ const styles = StyleSheet.create({
 });
 
 export { BaseInput };
-
