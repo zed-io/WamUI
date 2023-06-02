@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInputProps } from "react-native";
 
-import { CurrencySymbol, defaultCurrencySymbol } from "../../home/currency";
 import { BaseInput } from "./BaseInput";
 ``;
 
@@ -9,16 +8,10 @@ type Props = {
   placeholder: string;
   value?: string;
   onPress?: () => void;
-  currency?: CurrencySymbol;
   onChangeText: (text: string) => void;
 } & TextInputProps;
 
-const CurrencyFormatter = ({
-  placeholder,
-  currency = defaultCurrencySymbol,
-  value,
-  ...props
-}: Props) => {
+const CurrencyFormatter = ({ placeholder, value, ...props }: Props) => {
   const formatValue = (input: string) => {
     const numericInput = input.replace(/[^0-9.]+/g, "");
     const decimalStarted = input.includes(".");
@@ -36,7 +29,7 @@ const CurrencyFormatter = ({
     }
 
     if (formattedValue !== "") {
-      formattedValue = currency + formattedValue;
+      formattedValue = formattedValue;
     }
 
     return formattedValue;
