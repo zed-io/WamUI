@@ -1,31 +1,27 @@
-import React, { useCallback, useState } from "react";
-import { StyleSheet } from "react-native";
+import React from "react";
+import { StyleSheet, TextInputProps } from "react-native";
+
+import { CurrencySymbol, defaultCurrencySymbol } from "../../home/currency";
 import { BaseInput } from "./BaseInput";
-import { useFonts } from "expo-font";
+``;
 
 type Props = {
-  label?: string;
   placeholder: string;
   value?: string;
-  RightIcon?: React.ReactElement;
-  LeftIcon?: React.ReactElement;
   onPress?: () => void;
-  currency?: string;
-};
+  currency?: CurrencySymbol;
+  onChangeText: (text: string) => void;
+} & TextInputProps;
 
-const NumberBaseInput = ({
-  label,
+const CurrencyFormatter = ({
   placeholder,
-  RightIcon,
-  LeftIcon,
-  currency,
+  currency = defaultCurrencySymbol,
+  value,
   ...props
 }: Props) => {
-  const [value, setValue] = useState("");
-
   const formatValue = (input: string) => {
     const numericInput = input.replace(/[^0-9.]+/g, "");
-    let decimalStarted = input.includes(".");
+    const decimalStarted = input.includes(".");
     let [integerPart, decimalPart] = numericInput.split(".");
 
     integerPart = integerPart?.replace(/\B(?=(\d{3,3})+(?!\d))/g, ",");
@@ -40,32 +36,27 @@ const NumberBaseInput = ({
     }
 
     if (formattedValue !== "") {
-      formattedValue = currency + formattedValue; // Add currency prefix
+      formattedValue = currency + formattedValue;
     }
 
     return formattedValue;
   };
 
-  const handleChangeText = (input: string) => {
+  const handleChange = (input: string) => {
     const formattedValue = formatValue(input);
-    setValue(formattedValue);
+    props.onChangeText(formattedValue);
   };
 
   return (
     <BaseInput
       {...props}
       keyboardType="decimal-pad"
-      style={[
-        styles.input,
-        {
-          fontFamily: "IBM Plex Mono",
-        },
-      ]}
+      style={styles.input}
       placeholder={placeholder}
       placeholderTextColor="gray"
       selectionColor="#B34AFF"
       value={value}
-      onChangeText={handleChangeText}
+      onChangeText={handleChange}
     />
   );
 };
@@ -75,9 +66,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     paddingHorizontal: 10,
-    fontFamily: "IBM Plex Mono",
     fontSize: 16,
   },
 });
 
-export { NumberBaseInput };
+export { CurrencyFormatter };

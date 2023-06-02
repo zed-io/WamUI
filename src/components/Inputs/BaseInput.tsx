@@ -11,7 +11,7 @@ import { ClearInput } from "../../icons/ClearInput";
 
 type Props = {
   label?: string;
-  placeholder: string;
+  placeholder?: string;
   value?: string;
   RightIcon?: React.ReactElement;
   LeftIcon?: React.ReactElement;
@@ -38,12 +38,13 @@ const BaseInput = ({
     // @note what is the custom logic?
     setFocused(focused);
   };
+
   const handleChange = (text: string): void => {
     onChangeText(text);
   };
 
   const clearInput = () => {
-    onChangeText("");
+    onChangeText(" ");
   };
 
   return (
@@ -94,7 +95,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     paddingHorizontal: 10,
-    fontFamily: "CircularStd-Book",
   },
   icon: {
     marginHorizontal: 10,
