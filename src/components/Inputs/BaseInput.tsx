@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ClearInput } from "../../icons/ClearInput";
+import { ScaleProvider, swidth, sheight } from "react-native-figma-scale";
 
 type Props = {
   label?: string;
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
   iconRight: {
     marginLeft: 10,
   },
+  
 });
 
 export { BaseInput };
