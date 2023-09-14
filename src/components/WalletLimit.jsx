@@ -1,25 +1,49 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const WalletLimit = ({ onClick }) => {
   const navigation = useNavigation();
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+    navigation.navigate("UpgradePage");
+  };
 
   return (
     <View style={styles.container}>
       <View style={{ flex: 1 }}>
-        <Text>Current Limit</Text>
-        <Text style={styles.limitText}>TTD 5000</Text>
+        <Text style={styles.limitText}>5,000 Limit</Text>
       </View>
 
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("UpgradePage");
-        }}
-        style={styles.increaseLimitButton}
+      <Pressable
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        style={({ pressed }) => [
+          styles.increaseLimitButton,
+          {
+            backgroundColor: pressed || isPressed ? "#A8FCAE" : "#43FF52",
+          },
+        ]}
       >
-        <Text style={styles.buttonText}>Upgrade</Text>
-      </TouchableOpacity>
+        {({ pressed }) => (
+          <Text
+            style={[
+              styles.buttonText,
+              {
+                color: pressed || isPressed ? "#00BF4D" : "black",
+              },
+            ]}
+          >
+            Upgrade
+          </Text>
+        )}
+      </Pressable>
     </View>
   );
 };
@@ -36,17 +60,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   limitText: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 16,
   },
   increaseLimitButton: {
-    backgroundColor: "#B34AFF",
     paddingHorizontal: 15,
     paddingVertical: 8,
     borderRadius: 12,
   },
   buttonText: {
-    color: "white",
     fontSize: 14,
     fontWeight: "bold",
   },
